@@ -1,19 +1,27 @@
 package com.streamvibe.api.models.filme;
 
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Filme {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     
-    private int id;
     private String nome;
     private String estudio;
     private double duracao;
     private String imagem;
-    private String genero;
+
+    @Enumerated(EnumType.STRING)
+    private Genero genero;
+
     private String diretor;
     private String elenco;
     private String sinopse;
@@ -27,6 +35,7 @@ public class Filme {
         this.diretor = dados.diretor();
         this.elenco = dados.elenco();
         this.sinopse = dados.sinopse();
+
     }
 
 }

@@ -1,10 +1,15 @@
 package com.streamvibe.api.models.usuario;
 
+import com.streamvibe.api.models.endereco.DadosCadastroEndereco;
+
 public record DadosCadastroUsuario(
-    String nome, 
-    String dataNascimento,
-    String cpf,
-    String email,
-    String senha) {
+                String nome,
+                String dataDeNascimento,
+                String email,
+                String senha,
+                String cpf,
+                DadosCadastroEndereco endereco
+
+) {
 
 }
